@@ -10,7 +10,10 @@ class DashboardPadGamepad : DashboardThing
 		const float offAlpha = 0.33f;
 
 		vec4 strokeColor = Setting_Gamepad_BorderColor;
-		vec4 fillColor = Setting_Gamepad_FillColor;
+		vec4 fillColorSteer = Setting_Gamepad_FillColorSteer;
+		vec4 fillColorAcc = Setting_Gamepad_FillColorAcc;
+		vec4 fillColorBrake = Setting_Gamepad_FillColorBrake;
+		
 
 		float leftSize = m_size.x * (0.5f - Setting_Gamepad_MiddleScale / 2) - Setting_Gamepad_Spacing;
 		float midX = leftSize + Setting_Gamepad_Spacing;
@@ -49,7 +52,7 @@ class DashboardPadGamepad : DashboardThing
 		if (steerLeft > 0) {
 			float valueWidth = steerLeft * leftSize;
 			nvg::Scissor(leftSize - valueWidth, 0, valueWidth, m_size.y);
-			nvg::FillColor(fillColor);
+			nvg::FillColor(fillColorSteer);
 			nvg::Fill();
 			nvg::ResetScissor();
 		}
@@ -66,7 +69,7 @@ class DashboardPadGamepad : DashboardThing
 		if (steerRight > 0) {
 			float valueWidth = steerRight * rightSize;
 			nvg::Scissor(rightX, 0, valueWidth, m_size.y);
-			nvg::FillColor(fillColor);
+			nvg::FillColor(fillColorSteer);
 			nvg::Fill();
 			nvg::ResetScissor();
 		}
@@ -80,7 +83,7 @@ class DashboardPadGamepad : DashboardThing
 		if (pedalGas > 0) {
 			float valueHeight = pedalGas * topSize;
 			nvg::Scissor(midX, topSize - valueHeight, midSize, valueHeight);
-			nvg::FillColor(fillColor);
+			nvg::FillColor(fillColorAcc);
 			nvg::Fill();
 			nvg::ResetScissor();
 		}
@@ -94,7 +97,7 @@ class DashboardPadGamepad : DashboardThing
 		if (pedalBrake > 0) {
 			float valueHeight = pedalBrake * bottomSize;
 			nvg::Scissor(midX, bottomY, midSize, valueHeight);
-			nvg::FillColor(fillColor);
+			nvg::FillColor(fillColorBrake);
 			nvg::Fill();
 			nvg::ResetScissor();
 		}
