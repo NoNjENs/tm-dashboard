@@ -73,8 +73,14 @@ GamepadStyle Setting_Gamepad_Style = GamepadStyle::Uniform;
 [Setting category="Gamepad" name="Empty fill color" color]
 vec4 Setting_Gamepad_EmptyFillColor = vec4(0, 0, 0, 0.7f);
 
-[Setting category="Gamepad" name="Fill color" color]
-vec4 Setting_Gamepad_FillColor = vec4(1, 0.2f, 0.6f, 1);
+[Setting category="Gamepad" name="Fill color Steering" color]
+vec4 Setting_Gamepad_FillColorSteer = vec4(1, 0.2f, 0.6f, 1);
+
+[Setting category="Gamepad" name="Fill color Acceleration" color]
+vec4 Setting_Gamepad_FillColorAcc = vec4(1, 0.2f, 1, 1);
+
+[Setting category="Gamepad" name="Fill color Brake" color]
+vec4 Setting_Gamepad_FillColorBrake = vec4(0, 0.2f, 0.6f, 1);
 
 [Setting category="Gamepad" name="Border color" color]
 vec4 Setting_Gamepad_BorderColor = vec4(1, 1, 1, 1);
